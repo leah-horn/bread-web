@@ -11,9 +11,13 @@ module.exports = {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
     },
+    parser: "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
-            "jsx": true
+            "jsx": true,
+            "arrowFunctions": true,
+            "modules": true,
+            "classes": true
         },
         "ecmaVersion": 2018,
         "sourceType": "module"
@@ -22,6 +26,7 @@ module.exports = {
         "react"
     ],
     "rules": {
-        "react/prefer-stateless-function": "warn"
+        "react/prefer-stateless-function": "warn",
+        "react/state-in-constructor": "off",
     }
 };

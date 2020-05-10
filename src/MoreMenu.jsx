@@ -3,60 +3,57 @@ import IconButton from '@material-ui/core/IconButton';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
-import Routes from './Routes'
+import Routes from './Routes';
 
-import './MoreMenu.css'
+import './MoreMenu.css';
 
 export default class MoreMenu extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     state = {
-        anchorEl: null
+      anchorEl: null,
     };
 
     doOpen = (event) => {
-        this.setState({ anchorEl: event.currentTarget });
+      this.setState({ anchorEl: event.currentTarget });
     }
 
     doClose = () => {
-        this.setState({ anchorEl: null });
+      this.setState({ anchorEl: null });
     }
 
     render() {
-        return (
-            <div>
-                <IconButton
-                    onClick={this.doOpen}
-                >
-                    <MoreVertIcon/>
-                </IconButton>
-                <Menu
-                    anchorEl={this.state.anchorEl}
-                    open={Boolean(this.state.anchorEl)}
-                    onClose={this.doClose}
-                >
-                    <MenuItem
-                        onClick={this.doClose}
-                        divider="true"
-                    >
-                        <Link className="MoreMenu" to={Routes.profile}>
-                            <FormattedMessage id="more-menu.profile" />
-                        </Link>
-                    </MenuItem>
-                    <MenuItem
-                        to={Routes.logout}
-                        onClick={this.doClose}
-                    >
-                        <Link className="MoreMenu" to={Routes.logout}>
-                            <FormattedMessage id="more-menu.logout" />
-                        </Link>
-                    </MenuItem>
-                 </Menu>
-            </div>
-        );
+      const { anchorEl } = this.state;
+      return (
+        <div>
+          <IconButton
+            onClick={this.doOpen}
+          >
+            <MoreVertIcon />
+          </IconButton>
+          <Menu
+            anchorEl={anchorEl}
+            open={Boolean(anchorEl)}
+            onClose={this.doClose}
+          >
+            <MenuItem
+              onClick={this.doClose}
+              divider="true"
+            >
+              <Link className="MoreMenu" to={Routes.profile}>
+                <FormattedMessage id="more-menu.profile" />
+              </Link>
+            </MenuItem>
+            <MenuItem
+              to={Routes.logout}
+              onClick={this.doClose}
+            >
+              <Link className="MoreMenu" to={Routes.logout}>
+                <FormattedMessage id="more-menu.logout" />
+              </Link>
+            </MenuItem>
+          </Menu>
+        </div>
+      );
     }
 }
