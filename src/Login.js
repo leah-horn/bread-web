@@ -8,35 +8,35 @@ import { FormattedMessage } from 'react-intl';
 
 
 export default class Login extends React.Component {
-    render() {
-        return (
-            <FormControl
-                variant="outlined"
-            >
-                <TextField
-                    id="email"
-                    label={<FormattedMessage id="login.email" />}
-                    type="input"
-                    autoComplete="username"
-                />
-                <TextField
-                    id="password"
-                    label={<FormattedMessage id="login.password" />}
-                    type="password"
-                    autoComplete="current-password"
-                />
-                <FormControlLabel
-                    control={
-                        <Checkbox
-                            id="remember-me"
-                        />
-                    }
-                    label={<FormattedMessage id="login.remember-me" />}
-                />
-                <Button variant="contained">
-                    <FormattedMessage id="login.submit" />
-                </Button>
-            </FormControl>
-        );
-    }
+  render() {
+    return (
+      <FormControl
+        variant="outlined"
+      >
+        <TextField
+          id="email"
+          label={<FormattedMessage id="login.email" />}
+          type="input"
+          autoComplete="username"
+        />
+        <TextField
+          id="password"
+          label={<FormattedMessage id="login.password" />}
+          type="password"
+          autoComplete="current-password"
+        />
+        <FormControlLabel
+          control={(
+            <Checkbox
+              id="remember-me"
+            />
+                      )}
+          label={<FormattedMessage id="login.remember-me" />}
+        />
+        <Button variant="contained">
+          <FormattedMessage id="login.submit" />
+        </Button>
+      </FormControl>
+    );
+  }
 }
