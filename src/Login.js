@@ -10,7 +10,9 @@ import { FormattedMessage } from 'react-intl';
 export default class Login extends React.Component {
     render() {
         return (
-            <FormControl>
+            <FormControl
+                variant="outlined"
+            >
                 <TextField
                     id="email"
                     label={<FormattedMessage id="login.email" />}
