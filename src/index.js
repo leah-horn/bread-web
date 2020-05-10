@@ -1,13 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { IntlProvider, addLocaleData } from 'react-intl';
+import messages_en from "./translations/en.json";
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+const messages = {
+    'en': messages_en
+}
+const language = navigator.language.split(/[-_]/)[0];
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <React.StrictMode>
+        <IntlProvider locale={language} messages={messages[language]}>
+            <App />
+        </IntlProvider>
+    </React.StrictMode>,
   document.getElementById('root')
 );
 
