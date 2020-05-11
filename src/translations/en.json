@@ -4,5 +4,6 @@
   "login.email": "E-Mail",
   "login.password": "Password",
   "login.remember-me": "Remember Me",
-  "login.submit":  "Login"
+  "login.submit": "Login",
+  "login.failure": "Either e-mail or password were invalid"
 }
