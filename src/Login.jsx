@@ -14,17 +14,14 @@ import { login } from './dataAccess/User';
 export default class Login extends React.Component {
 /*  constructor(props) {
     super(props);
-    this.email = React.createRef();
-    this.password = React.createRef();
-    this.rememberMe = React.createRef();
-  }*/
+  } */
   state = {
     buttonDisabled: false,
     redirect: false,
     loginError: false,
-    username: "",
-    password: "",
-    rememberMe: "",
+    username: '',
+    password: '',
+    rememberMe: '',
   };
 
   props = {
@@ -44,22 +41,24 @@ export default class Login extends React.Component {
         this.setState({
           buttonDisabled: false,
           loginError: true,
-          username: "",
-          password: "",
+          username: '',
+          password: '',
         });
       });
     }
   };
 
   handleChange = (event) => {
-    const target = event.target;
+    const { target } = event;
     const value = target.id === 'rememberMe' ? target.checked : target.value;
     this.setState({ [target.id]: value });
   }
 
   render() {
     const { nextLocation } = this.props;
-    const { loginError, redirect, buttonDisabled, username, password, rememberMe} = this.state;
+    const {
+      loginError, redirect, buttonDisabled, username, password, rememberMe,
+    } = this.state;
     if (redirect) return <Redirect to={nextLocation} />;
 
     return (

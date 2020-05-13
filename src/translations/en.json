@@ -5,5 +5,8 @@
   "login.password": "Password",
   "login.remember-me": "Remember Me",
   "login.submit": "Login",
-  "login.failure": "Either e-mail or password were invalid"
+  "login.failure": "Either e-mail or password were invalid",
+  "profile.displayName": "Display Name",
+  "profile.email": "E-Mail",
+  "profile.password":  "Password"
 }
